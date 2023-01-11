@@ -30,12 +30,14 @@ import Slick
 siteMeta :: SiteMeta
 siteMeta =
   SiteMeta
-    { siteAuthor = "Evie Ciobanu",
-      baseUrl = "https://eevie.ro",
-      siteTitle = "Evie's Blog",
-      twitterHandle = Just "evie_fp",
-      githubUser = Just "eviefp",
-      twitchUser = Just "eviefp"
+    { siteAuthor = "Evie Ciobanu"
+    , baseUrl = "https://evie.ro"
+    , siteTitle = "Blogul lu' Evie"
+    , linktree = "evie__ro"
+    , youtube = "evie__ro"
+    , instagram = "evie__ro"
+    , tiktok = "evie__ro"
+    , twitchUser = "evie__ro"
     }
 
 outputFolder :: FilePath
@@ -45,17 +47,19 @@ outputFolder = "docs/"
 
 withSiteMeta :: Value -> Value
 withSiteMeta (Object obj) = Object $ KM.union obj siteMetaObj
-  where
-    Object siteMetaObj = toJSON siteMeta
+ where
+  Object siteMetaObj = toJSON siteMeta
 withSiteMeta _ = error "only add site meta to objects"
 
 data SiteMeta = SiteMeta
-  { siteAuthor :: String,
-    baseUrl :: String, -- e.g. https://example.ca
-    siteTitle :: String,
-    twitterHandle :: Maybe String, -- Without @
-    githubUser :: Maybe String,
-    twitchUser :: Maybe String
+  { siteAuthor :: String
+  , baseUrl :: String -- e.g. https://example.ca
+  , siteTitle :: String
+  , linktree :: String
+  , youtube :: String
+  , instagram :: String
+  , tiktok :: String
+  , twitchUser :: String
   }
   deriving (Generic, Eq, Ord, Show, ToJSON)
 
@@ -66,32 +70,32 @@ newtype IndexInfo = IndexInfo
   deriving (Generic, Show, FromJSON, ToJSON)
 
 data Tag = Tag
-  { tag :: String,
-    posts :: [Post],
-    url :: String
+  { tag :: String
+  , posts :: [Post]
+  , url :: String
   }
   deriving (Generic, Show, ToJSON)
 
 -- | Data for a blog post
 data Post = Post
-  { title :: String,
-    author :: String,
-    content :: String,
-    url :: String,
-    date :: String,
-    tags :: [String],
-    description :: String,
-    image :: Maybe String
+  { title :: String
+  , author :: String
+  , content :: String
+  , url :: String
+  , date :: String
+  , tags :: [String]
+  , description :: String
+  , image :: Maybe String
   }
   deriving (Generic, Eq, Ord, Show, FromJSON, ToJSON, Binary)
 
 data AtomData = AtomData
-  { title :: String,
-    domain :: String,
-    author :: String,
-    posts :: [Post],
-    currentTime :: String,
-    atomUrl :: String
+  { title :: String
+  , domain :: String
+  , author :: String
+  , posts :: [Post]
+  , currentTime :: String
+  , atomUrl :: String
   }
   deriving (Generic, ToJSON, Eq, Ord, Show)
 
@@ -99,7 +103,7 @@ buildTags :: [Tag] -> Action ()
 buildTags t = void $ forP t writeTag
 
 writeTag :: Tag -> Action ()
-writeTag t@Tag {url} = do
+writeTag t@Tag{url} = do
   tagTempl <- compileTemplate' "site/templates/tag.html"
   writeFile' (outputFolder <> url -<.> "html") . T.unpack $ substitute tagTempl (toJSON t)
 
@@ -109,26 +113,26 @@ getTags posts = do
       tagToPostsList = fmap S.toList tagToPostsSet
       tagObjects =
         M.foldMapWithKey
-          (\tag ps -> [Tag {tag, posts = reverse $ sortByDate ps, url = "/tag/" <> tag}])
+          (\tag ps -> [Tag{tag, posts = reverse $ sortByDate ps, url = "/tag/" <> tag}])
           tagToPostsList
   return tagObjects
-  where
-    toMap :: Post -> M.Map String (S.Set Post)
-    toMap p@Post {tags} = M.unionsWith mappend (embed p <$> tags)
+ where
+  toMap :: Post -> M.Map String (S.Set Post)
+  toMap p@Post{tags} = M.unionsWith mappend (embed p <$> tags)
 
-    embed :: Post -> String -> M.Map String (S.Set Post)
-    embed post tag = M.singleton tag (S.singleton post)
+  embed :: Post -> String -> M.Map String (S.Set Post)
+  embed post tag = M.singleton tag (S.singleton post)
 
 sortByDate :: [Post] -> [Post]
 sortByDate = sortBy compareDates
-  where
-    compareDates = compare `on` (formatDate . date)
+ where
+  compareDates = compare `on` (formatDate . date)
 
 -- | given a list of posts this will build a table of contents
 buildIndex :: [Post] -> Action ()
 buildIndex posts' = do
   indexT <- compileTemplate' "site/templates/index.html"
-  let indexInfo = IndexInfo {posts = reverse posts'}
+  let indexInfo = IndexInfo{posts = reverse posts'}
       indexHTML = T.unpack $ substitute indexT (withSiteMeta $ toJSON indexInfo)
   writeFile' (outputFolder </> "index.html") indexHTML
 
@@ -140,8 +144,9 @@ buildPosts = do
   D.traceShowM exceptInProgress
   forP exceptInProgress buildPost
 
--- | Load a post, process metadata, write it to output, then return the post object
--- Detects changes to either post content or template
+{- | Load a post, process metadata, write it to output, then return the post object
+ Detects changes to either post content or template
+-}
 buildPost :: FilePath -> Action Post
 buildPost srcPath = cacheAction ("build" :: T.Text, srcPath) $ do
   liftIO . putStrLn $ "Rebuilding post: " <> srcPath
@@ -166,9 +171,9 @@ copyStaticFiles = do
 
 formatDate :: String -> String
 formatDate humanDate = toIsoDate parsedTime
-  where
-    parsedTime =
-      parseTimeOrError True defaultTimeLocale "%b %e, %Y" humanDate :: UTCTime
+ where
+  parsedTime =
+    parseTimeOrError True defaultTimeLocale "%b %e, %Y" humanDate :: UTCTime
 
 rfc3339 :: Maybe String
 rfc3339 = Just "%H:%M:SZ"
@@ -181,21 +186,22 @@ buildFeed posts = do
   now <- liftIO getCurrentTime
   let atomData =
         AtomData
-          { title = siteTitle siteMeta,
-            domain = baseUrl siteMeta,
-            author = siteAuthor siteMeta,
-            posts = mkAtomPost <$> posts,
-            currentTime = toIsoDate now,
-            atomUrl = "/atom.xml"
+          { title = siteTitle siteMeta
+          , domain = baseUrl siteMeta
+          , author = siteAuthor siteMeta
+          , posts = mkAtomPost <$> posts
+          , currentTime = toIsoDate now
+          , atomUrl = "/atom.xml"
           }
   atomTempl <- compileTemplate' "site/templates/atom.xml"
   writeFile' (outputFolder </> "atom.xml") . T.unpack $ substitute atomTempl (toJSON atomData)
-  where
-    mkAtomPost :: Post -> Post
-    mkAtomPost p = p {date = formatDate $ date p}
+ where
+  mkAtomPost :: Post -> Post
+  mkAtomPost p = p{date = formatDate $ date p}
 
--- | Specific build rules for the Shake system
---   defines workflow to build the website
+{- | Specific build rules for the Shake system
+   defines workflow to build the website
+-}
 buildRules :: Action ()
 buildRules = do
   allPosts <- sortByDate <$> buildPosts
@@ -207,5 +213,5 @@ buildRules = do
 
 main :: IO ()
 main = do
-  let shOpts = shakeOptions {shakeVerbosity = Chatty, shakeLintInside = ["\\"]}
+  let shOpts = shakeOptions{shakeVerbosity = Chatty, shakeLintInside = ["\\"]}
   shakeArgsForward shOpts buildRules

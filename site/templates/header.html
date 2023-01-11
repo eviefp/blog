@@ -1,28 +1,30 @@
 <header>
     <nav>
         <a id="beacon" href="/">
-            <div id="home-text"> HOME </div>
+            <div id="home-text"> BLOG </div>
         </a>
     </nav>
 
     <div class="right-sidebar">
-        {{#twitchUser}}
-        <a class="ext-link" href="https://twitch.tv/{{twitchUser}}">
-            <img src="/images/twitch-logo.png" alt="Twitch Channel"/>
+        <a class="ext-link" href="https://instagram.com/{{instagram}}">
+            <img src="/images/instagram-logo.png" alt="Instagram"/>
         </a>
-        {{/twitchUser}}
 
-        {{#githubUser}}
-        <a class="ext-link" href="https://github.com/{{githubUser}}">
-            <img src="/images/github-logo.png" alt="Github Profile"/>
+        <a class="ext-link" href="https://youtube.com/@{{youtube}}">
+            <img src="/images/youtube-logo.png" alt="Youtube"/>
         </a>
-        {{/githubUser}}
 
-        {{#twitterHandle}}
-        <a class="ext-link" href="https://twitter.com/{{twitterHandle}}">
-            <img src="/images/twitter-logo.png" alt="Twitter Profile"/>
+        <a class="ext-link" href="https://linktr.ee/{{linktree}}">
+            <img src="/images/linktree-logo.png" alt="Linktree"/>
         </a>
-        {{/twitterHandle}}
+
+        <a class="ext-link" href="https://tiktok.com/@{{tiktok}}">
+            <img src="/images/tiktok-logo.png" alt="Tiktok"/>
+        </a>
+
+        <a class="ext-link" href="https://twitch.com/@{{twitch}}">
+            <img src="/images/twitch-logo.png" alt="Twitch"/>
+        </a>
 
         <a class="ext-link" rel="me" href="https://hachyderm.io/@vie">
           <img src="/images/mastodon-logo.svg" alt="Mastodon Profile"/>
