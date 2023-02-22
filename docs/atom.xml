@@ -2,91 +2,69 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <title>Blogul lu&#39; Evie</title>
     <link href="https://evie.ro/atom.xml" rel="self" type="application/rss+xml" />
-  <updated>2023-01-11T17:55:SZ</updated>
+  <updated>2023-01-11T19:38:SZ</updated>
   <author>
       <name>Evie Ciobanu</name>
   </author>
   <id>https://evie.ro/</id>
 
   <entry>
-      <title>Impostor Syndrome</title>
+      <title>Power Move</title>
       <link href="https://evie.ro/posts/2023-01-11-power-move.html"/>
       <id>https://evie.roposts/2023-01-11-power-move.html</id>
-      <updated>2021-12-30T00:00:SZ</updated>
+      <updated>2023-01-11T00:00:SZ</updated>
       <category term="personal"/>
-      <summary>something something trans and programmer</summary>
-      <content type="html"><![CDATA[<h2 id="impostor-syndrome">Impostor Syndrome</h2>
-<p>I am privileged because.... &lt;- what is this? Why do we need to add
-disclaimers? <a href="https://dmalashock.com/coming-out-as-nonbinary/"
-class="uri">https://dmalashock.com/coming-out-as-nonbinary/</a></p>
-<p>Because being transgender is such a big deal, and trying typically
-gendered things is frowned upon, it feels so important to "get it right"
-or not be wrong. And that puts a lot of pressure on us.</p>
-<p>And once you start accepting and coming out, the impostor syndrome
-can kick in. And it can manifest itself in many different ways. For me,
-it was mostly about being sure and about not being pretty enough or able
-to pass.</p>
-<pre><code>The impostor cycle
-The need to be special or the best
-Characteristics of superman/superwoman
-Fear of failure
-Denial of ability and discounting praise
-Feeling fear and guilt about success</code></pre>
-<p>Perfectionism is a trait that is believed to have a marked impact on
-the development and maintenance of impostor fears. Kets de Vries (2005)
-asserted that perfectionism is the underlying cause of Neurotic
-Imposture. Impostors set “excessively high, unrealistic goals and then
-experience self- defeating thoughts and behaviors when they can’t reach
-those goals” (Kets de Vries, 2005, p. 112). Within the clinical
-literature on the Impostor Phenomenon, perfectionism is repeatedly
-discussed as a dominant theme, with Impostors setting extremely high and
-often unrealistic standards for their self-evaluation (Imes &amp;
-Clance, 1984). The need to be the best, the need to be able to do
-everything flawlessly and their tendency to overwork are the
-characteristics of Impostors that are consistent with the pursuit of
-perfection. Impostors’ tendency to discount positive feedback and
-maintain high standards for self-evaluation, while being critical of
-their inability to realise these standards could also be considered
-consistent with perfectionism.</p>
-<p>Thompson, Davis, and Davidson (1998) found perfectionistic cognitions
-in subjects reporting high levels of impostor fears, such as a tendency
-to externalise success, holding high standards for self-evaluation,
-overgeneralisation of a single failure experience to their overall
-self-concept, and a high level of self-criticism. Thompson, Foreman, and
-Martin (2000) compared Impostors and non-Impostors in their affective
-and cognitive reactions to making mistakes; they found that Impostors
-reported a higher concern about their mistakes and a greater tendency to
-overestimate the number of mistakes they had made than non-Impostors. In
-addition, Impostors also reported greater dissatisfaction with their
-performance and viewed their performance as less successful than
-non-Impostors. These findings provided empirical support for the
-observations of Clance (1985) that Impostors reject any performance that
-does not reach their perfect standard and consider their performance as
-disappointing.</p>
-<p>They also strived to conceal their imperfection by not engaging in
-situations when they were likely to reveal their personal limitations to
-others. Impostors do not want to appear imperfect and actively attempt
-to conceal their imperfection, but paradoxically Impostors do openly
-disclose their imperfection to others</p>
-<p>Impostors can be viewed as self-presentational strategies used to
-avoid negative interpersonal implications of potential failure by
-engaging in self- deprecating behaviours, such as discounting praise and
-positive feedback or denying that they are as competent as others
-believe.</p>
-<p>A study by Cromwell, Brown, Sanchez-Huceles, and Adair (1990) found
-Impostors are different from non-Impostors in that Impostors feel they
-need to achieve perfection in order to gain others’ approval. This
-suggested that there may be social components contributing to
-perfectionism in Impostors. This is because Impostors fear being exposed
-to others as fraudulent and lacking in ability and attracting negative
-judgments from others. Thompson et al. (2000) found that Impostors have
-a higher level of fear of negative evaluation than non-Impostors and the
-motive behind their achievement behaviour is to meet their perception of
-other people’s standards. These perceived social expectations may be a
-source of perfectionism in Impostors, which could be identified as
-socially prescribed perfectionism.</p>
-<p>How did you get to have this impostor syndrome? What kind of feedback
-did you get to get here? Did other people tell you you're not good
-enough? Etc.</p>]]></content>
+      <summary>asdf</summary>
+      <content type="html"><![CDATA[<h1 id="todo-titlu">TODO: Titlu</h1>
+<p>Pentru că nu am energia necesară să fac (încă) <a
+href="https://www.youtube.com/watch?v=3TQwe6wHptY">un răspuns</a> video
+pentru <a
+href="https://www.youtube.com/channel/UCC91fciphdkZyUquL3M5BiA">Podcastul
+de Filosofie</a>, m-am gândit să răspund în scris.</p>
+<p>Podcastul de Filosofie mi-a scris un comentariu la ultimul meu video,
+<a href="https://www.youtube.com/watch?v=3u0eslEjXEY">Ce înseamnă
+LGBT?</a>. În cazul în care nu l-ați văzut, conține definiții şi câteva
+informații despre lesbiene, gay, bisexuali, şi persoane transgender.</p>
+<p>Comentariul începe aşa:</p>
+<blockquote>
+<p>Foarte bun videoclipul! O mică observație despre formă, mai degrabă
+decât conținut. Atunci când spui ”Pur și simplu suntem femei”, chiar
+dacă asta e o afirmație pe care eu am învățat să o înțeleg și să o
+accept,</p>
+</blockquote>
+<p>Ştim ce URMEAză, nu? Este foarte previzibil că urmează un "dar"
+(implicit):</p>
+<blockquote>
+<p>[dar] mi se pare că apar aici exact caracteristicile unui power move,
+genul de power move de care comunitatea trans acuză restul societății
+(sau părțile ei mai dă dreapta așa) că o practică.</p>
+</blockquote>
+<p>De ce ajungem tot timpul în acelaşi punct când avem discuții de genul
+acesta? De ce insistă centriştii să caute calea de mijloc? SĂ
+legitimizeze în mod egal ambele "păreri"?</p>
+<p>Pentru că este exact acelaşi lucru să spui ceva despre tine şi să
+spui ceva despre altcineva. Mai ales când vine vorba despre identitatea
+personală.</p>
+<p>Şi ca să fiu explicitĂ, argumentul pare a fi cĂ dacĂ eu ca femeie
+trans spun <code>eu sunt pur şi simplu o femeie</code>, este ca şi cum
+un transfob ar spune despre mine că eu sunt
+<code>pur şi simplu un bărbat</code>.</p>
+<blockquote>
+<p>Deci dincolo de adevărul ei, fraza ”Eu sunt pur și simplu o femeie”
+este echivalentă cu fraza ”Tu ești pur și simplu un bărbat”. Prin
+inserția acestui „pur și simplu”, părțile se izolează și discută ca cși
+cum claim-ul opus nu ar exista sau ar fi atât de nejustificat ori
+ridicol încât să nu merite luat în seamă. Și putem testa această
+analiză: Nu-i așa că dacă cineva face un videoclip și zice ”Femeile
+trans pur și simplu sunt bărbați” îl vom acuza împreună (și pe bună
+dreptate!) de transfobie? Și asta chiar dacă acea persoană s-ar putea
+apăra prin a spune că, pentru el sau ea, genul e dat în parte de
+capacitatea de a face copii sau de a menstrua sau mai știu eu ce. Repet,
+nu vreau să zic că un principiu sau altul trebuie să domine discuția.
+Vreau doar să zic că, deși pare o inserție nevinovată, acel „pur și
+simplu” poate fi interpretat drept power move, adică drept negare a
+existenței (identității?) celor pentru care lucrurile nu sunt chiar atât
+de pure și chiar atât de simple.</p>
+</blockquote>]]></content>
   </entry>
 </feed>
